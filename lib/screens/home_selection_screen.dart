@@ -26,7 +26,7 @@ class HomeSelectionScreen extends StatelessWidget {
               ElevatedButton(
                 onPressed: () {
                   Navigator.push(context,
-                    MaterialPageRoute(builder: (context) => CustomerHomeScreen()),
+                    MaterialPageRoute(builder: (context) => const CustomerHomeScreen()),
                   );
                 },
                 style: ElevatedButton.styleFrom(
