@@ -1,8 +1,8 @@
-import 'package:cafe_menu/widget/dummy_category_products.dart';
-import 'package:cafe_menu/screens/product_list_screen.dart';
+import 'package:cafe_menu/customer/widget/dummy_category_products.dart';
+import 'package:cafe_menu/customer/screens/product_list_screen.dart';
 import 'package:flutter/material.dart';
-import 'package:cafe_menu/widget/dummy_categories.dart';
-import 'package:cafe_menu/models/category_model.dart';
+import 'package:cafe_menu/customer/widget/dummy_categories.dart';
+import 'package:cafe_menu/customer/models/category_model.dart';
 
 class CustomerHomeScreen extends StatelessWidget {
   const CustomerHomeScreen({super.key});
@@ -23,7 +23,7 @@ class CustomerHomeScreen extends StatelessWidget {
                 width: double.infinity,
                 decoration: const BoxDecoration(
                   image: DecorationImage(
-                    image: AssetImage('lib/constants/images/images.jpg'),
+                    image: AssetImage('lib/customer/constants/images/images.jpg'),
                     fit: BoxFit.cover,
                   ),
                 ),

@@ -1,4 +1,4 @@
-import 'package:cafe_menu/models/product_model.dart';
+import 'package:cafe_menu/customer/models/product_model.dart';
 import 'dummy_products.dart';
 
 final Map<String, List<ProductModel>> categoryProductsMap = {

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:cafe_menu/models/product_model.dart';
+import 'package:cafe_menu/customer/models/product_model.dart';
 
 class ProductListTile extends StatelessWidget {
   final ProductModel product;

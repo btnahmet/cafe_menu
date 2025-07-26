@@ -1,5 +1,5 @@
-import 'package:cafe_menu/constants/aoo_colors.dart';
-import 'package:cafe_menu/screens/home_selection_screen.dart';
+import 'package:cafe_menu/customer/constants/aoo_colors.dart';
+import 'package:cafe_menu/home_selection_screen.dart';
 import 'package:flutter/material.dart';
 
 

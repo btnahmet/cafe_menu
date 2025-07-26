@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:cafe_menu/models/product_model.dart';
-import 'package:cafe_menu/widget/product_list_tile.dart';
-import 'package:cafe_menu/constants/aoo_colors.dart';
+import 'package:cafe_menu/customer/models/product_model.dart';
+import 'package:cafe_menu/customer/widget/product_list_tile.dart';
+import 'package:cafe_menu/customer/constants/aoo_colors.dart';
 class ProductListScreen extends StatelessWidget {
   final String categoryTitle;
   final List<ProductModel> products;

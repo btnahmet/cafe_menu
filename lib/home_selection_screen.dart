@@ -1,5 +1,6 @@
-import 'package:cafe_menu/constants/aoo_colors.dart';
-import 'package:cafe_menu/screens/customer_home_screen.dart';
+import 'package:cafe_menu/customer/constants/aoo_colors.dart';
+import 'package:cafe_menu/customer/screens/customer_home_screen.dart';
+import 'package:cafe_menu/employee/staff_home_screen.dart';
 import 'package:flutter/material.dart';
 
 class HomeSelectionScreen extends StatelessWidget {
@@ -46,7 +47,8 @@ class HomeSelectionScreen extends StatelessWidget {
                   onPressed: () {
                     Navigator.push(
                       context,
-                      MaterialPageRoute(builder: (context) => const CustomerHomeScreen()),
+                      MaterialPageRoute(
+                          builder: (context) => const CustomerHomeScreen()),
                     );
                   },
                 ),
@@ -55,7 +57,11 @@ class HomeSelectionScreen extends StatelessWidget {
                   label: "Personel Girişi",
                   color: AppColors.secondary,
                   onPressed: () {
-                    // TODO: Personel ekranına yönlendirme yapılacak
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => const StaffHomeScreen()),
+                    );
                   },
                 ),
               ],
