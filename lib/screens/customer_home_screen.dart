@@ -1,7 +1,7 @@
-import 'package:cafe_menu/constants/dummy_category_products.dart';
+import 'package:cafe_menu/widget/dummy_category_products.dart';
 import 'package:cafe_menu/screens/product_list_screen.dart';
 import 'package:flutter/material.dart';
-import 'package:cafe_menu/constants/dummy_categories.dart';
+import 'package:cafe_menu/widget/dummy_categories.dart';
 import 'package:cafe_menu/models/category_model.dart';
 
 class CustomerHomeScreen extends StatelessWidget {

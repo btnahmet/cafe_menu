@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:cafe_menu/models/product_model.dart';
 import 'package:cafe_menu/widget/product_list_tile.dart';
-import 'package:cafe_menu/constants/aoo_colors.dart'; // Renkleri buradan alabilirsin
-
+import 'package:cafe_menu/constants/aoo_colors.dart';
 class ProductListScreen extends StatelessWidget {
   final String categoryTitle;
   final List<ProductModel> products;
@@ -18,25 +17,37 @@ class ProductListScreen extends StatelessWidget {
     return SafeArea(
       child: Scaffold(
         backgroundColor: AppColors.background, // Arka plan açık ton
-        appBar: AppBar(
-          elevation: 0.5,
-          backgroundColor: AppColors.primary,
-          foregroundColor: Colors.white,
-          title: Text(
-            categoryTitle,
-            style: const TextStyle(
-              fontWeight: FontWeight.bold,
-              fontSize: 20,
-              letterSpacing: 0.5,
+        appBar: PreferredSize(
+          preferredSize: const Size.fromHeight(70),
+          child: AppBar(
+            automaticallyImplyLeading: false, // Geri tuşunu kaldırır
+            elevation: 4,
+            backgroundColor: AppColors.primary,
+            foregroundColor: Colors.white,
+            centerTitle: true,
+            shape: const RoundedRectangleBorder(
+              borderRadius: BorderRadius.vertical(
+                bottom: Radius.circular(22),
+              ),
+            ),
+            title: Text(
+              categoryTitle,
+              style: const TextStyle(
+                fontWeight: FontWeight.w600,
+                fontSize: 22,
+                letterSpacing: 0.6,
+                color: Colors.white,
+              ),
             ),
           ),
-          centerTitle: true,
         ),
+
         body: ListView.separated(
           padding: const EdgeInsets.symmetric(vertical: 12),
           itemCount: products.length,
           physics: const BouncingScrollPhysics(),
-          separatorBuilder: (_, __) => const Divider(indent: 20, endIndent: 20, thickness: 0.3),
+          separatorBuilder: (_, __) =>
+              const Divider(indent: 20, endIndent: 20, thickness: 0.3),
           itemBuilder: (context, index) {
             return ProductListTile(product: products[index]);
           },

@@ -1,4 +1,4 @@
-import 'package:cafe_menu/models/product_model.dart';
+import '../models/product_model.dart';
 
 final List<ProductModel> dummyFoodProducts = [
   ProductModel(id: 'f1', name: 'Tavuk Izgara', description: 'Pilav, köz biber, domates, salata', price: 120, imagePath: 'lib/constants/images/blueberry_mojito.jpg'),
@@ -68,6 +68,6 @@ final List<ProductModel> dummyExtras = [
   ProductModel(id: 'ex2', name: 'Ranch Sos', description: 'Yoğurt ve baharat karışımı', price: 12, imagePath: 'lib/constants/images/blueberry_mojito.jpg'),
   ProductModel(id: 'ex3', name: 'BBQ Sos', description: 'Füme aromalı sos', price: 14, imagePath: 'lib/constants/images/blueberry_mojito.jpg'),
   ProductModel(id: 'ex4', name: 'Acı Sos', description: 'Baharatlı sevenlere özel', price: 10, imagePath: 'lib/constants/images/blueberry_mojito.jpg'),
-  ProductModel(id: 'ex5', name: 'Kaşık Seti', description: 'Bıçak, çatal, kaşık takımı', price: 5, imagePath: 'lib/constants/images/blueberry_mojito.jpg'),
-  ProductModel(id: 'ex6', name: 'Peçete', description: 'Hijyenik kağıt peçete', price: 2, imagePath: 'lib/constants/images/blueberry_mojito.jpg'),
+  // ProductModel(id: 'ex5', name: 'Kaşık Seti', description: 'Bıçak, çatal, kaşık takımı', price: 5, imagePath: 'lib/constants/images/blueberry_mojito.jpg'),
+  // ProductModel(id: 'ex6', name: 'Peçete', description: 'Hijyenik kağıt peçete', price: 2, imagePath: 'lib/constants/images/blueberry_mojito.jpg'),
 ];
