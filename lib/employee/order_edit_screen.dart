@@ -1,24 +1,33 @@
-import 'package:cafe_menu/customer/screens/customer_home_screen.dart';
 import 'package:flutter/material.dart';
-import 'package:cafe_menu/customer/constants/aoo_colors.dart';
-import 'package:cafe_menu/customer/widget/dummy_category_products.dart';
-import 'package:cafe_menu/customer/models/product_model.dart';
-import 'package:cafe_menu/employee/staff_home_screen.dart';
-import 'package:cafe_menu/employee/table_selection_screen.dart';
 import 'package:cafe_menu/employee/model/order_model.dart';
+import 'package:cafe_menu/customer/models/product_model.dart';
+import 'package:cafe_menu/customer/constants/aoo_colors.dart';
+import 'package:cafe_menu/employee/table_selection_screen.dart';
+import 'package:cafe_menu/employee/staff_home_screen.dart';
+import 'package:cafe_menu/employee/staff_home_screen.dart' show StaffMenuScreen;
+import 'package:cafe_menu/customer/widget/dummy_category_products.dart';
 
-class OrderScreen extends StatefulWidget {
-  const OrderScreen({super.key});
+class OrderEditScreen extends StatefulWidget {
+  final int orderIndex;
+  final OrderModel order;
+  const OrderEditScreen({Key? key, required this.orderIndex, required this.order}) : super(key: key);
 
   @override
-  State<OrderScreen> createState() => _OrderScreenState();
+  State<OrderEditScreen> createState() => _OrderEditScreenState();
 }
 
-class _OrderScreenState extends State<OrderScreen> {
-  final TextEditingController _staffController = TextEditingController();
-
+class _OrderEditScreenState extends State<OrderEditScreen> {
+  late TextEditingController _staffController;
   String? selectedTable;
-  List<ProductModel> selectedProducts = [];
+  late List<ProductModel> selectedProducts;
+
+  @override
+  void initState() {
+    super.initState();
+    _staffController = TextEditingController(text: widget.order.staffName);
+    selectedTable = widget.order.tableName;
+    selectedProducts = List<ProductModel>.from(widget.order.products);
+  }
 
   void _openMenuSelection() async {
     final result = await Navigator.push<List<ProductModel>>(
@@ -40,12 +49,11 @@ class _OrderScreenState extends State<OrderScreen> {
   @override
   Widget build(BuildContext context) {
     final width = MediaQuery.of(context).size.width;
-
     return SafeArea(
       child: Scaffold(
         backgroundColor: AppColors.background,
         appBar: AppBar(
-          title: const Text("Sipariş Oluştur"),
+          title: const Text("Siparişi Düzenle"),
           centerTitle: true,
           backgroundColor: AppColors.secondary,
           foregroundColor: Colors.white,
@@ -108,7 +116,6 @@ class _OrderScreenState extends State<OrderScreen> {
                     style: TextStyle(color: Colors.white)),
               ),
               const SizedBox(height: 16),
-              // Seçim özetleri butonların hemen altında
               if (selectedTable != null)
                 Padding(
                   padding: EdgeInsets.symmetric(vertical: 4, horizontal: width * 0.01),
@@ -130,7 +137,7 @@ class _OrderScreenState extends State<OrderScreen> {
                 ),
                 const SizedBox(height: 8),
                 SizedBox(
-                  height: MediaQuery.of(context).size.height * 0.18, // Responsive yükseklik
+                  height: MediaQuery.of(context).size.height * 0.18,
                   child: ListView.separated(
                     scrollDirection: Axis.horizontal,
                     shrinkWrap: true,
@@ -142,7 +149,7 @@ class _OrderScreenState extends State<OrderScreen> {
                       return Card(
                         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
                         child: Container(
-                          width: MediaQuery.of(context).size.width * 0.38, // Responsive genişlik
+                          width: MediaQuery.of(context).size.width * 0.38,
                           padding: const EdgeInsets.all(8),
                           child: Column(
                             mainAxisAlignment: MainAxisAlignment.start,
@@ -202,7 +209,6 @@ class _OrderScreenState extends State<OrderScreen> {
                 ),
                 const SizedBox(height: 16),
               ],
-              // Sipariş Al butonu burada olacak
             ],
           ),
         ),
@@ -220,14 +226,16 @@ class _OrderScreenState extends State<OrderScreen> {
               child: ElevatedButton(
                 onPressed: () {
                   if (_staffController.text.isNotEmpty && selectedTable != null && selectedProducts.isNotEmpty) {
-                    // Siparişi oluştur ve kaydet
-                    final order = OrderModel(
+                    final updatedOrder = OrderModel(
                       staffName: _staffController.text.trim(),
                       tableName: selectedTable!,
                       products: List<ProductModel>.from(selectedProducts),
+                      createdAt: widget.order.createdAt,
                     );
-                    OrderRepository.addOrder(order);
-                    Navigator.pop(context); // Ana ekrana dön
+                    setState(() {
+                      OrderRepository.orders[widget.orderIndex] = updatedOrder;
+                    });
+                    Navigator.pop(context);
                   } else {
                     ScaffoldMessenger.of(context).showSnackBar(
                       const SnackBar(content: Text('Lütfen personel, masa ve menü seçiniz.')),
@@ -242,7 +250,7 @@ class _OrderScreenState extends State<OrderScreen> {
                   elevation: 2,
                 ),
                 child: const Text(
-                  "Siparişi Kaydet",
+                  "Kaydet",
                   style: TextStyle(
                     color: Colors.white,
                     fontSize: 16,
@@ -257,4 +265,4 @@ class _OrderScreenState extends State<OrderScreen> {
       ),
     );
   }
-}
+} 
