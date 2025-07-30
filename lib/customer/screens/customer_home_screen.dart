@@ -19,11 +19,11 @@ class CustomerHomeScreen extends StatelessWidget {
             // Üstteki görsel alanı da kaydırılabilir hale geldi
             SliverToBoxAdapter(
               child: Container(
-                height: height * 0.3,
+                height: height * 0.39,
                 width: double.infinity,
                 decoration: const BoxDecoration(
                   image: DecorationImage(
-                    image: AssetImage('lib/customer/constants/images/images.jpg'),
+                    image: AssetImage('lib/customer/constants/images/logo.jpg'),
                     fit: BoxFit.cover,
                   ),
                 ),

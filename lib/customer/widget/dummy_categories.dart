@@ -5,7 +5,7 @@ final List<CategoryModel> dummyCategories = [
   CategoryModel(
     id: '1',
     name: 'Yemekler',
-    imageUrl: 'C:/Users/ahmet/flutterApp/cafe_menu/lib/customer/constants/images/images.jpg',
+    imageUrl: 'C:/Users/ahmet/flutterApp/cafe_menu/lib/customer/constants/images/izgara_tavuk.jpg',
   ),
   CategoryModel(
     id: '2',
@@ -15,31 +15,31 @@ final List<CategoryModel> dummyCategories = [
   CategoryModel(
     id: '3',
     name: 'Soğuk Kahveler',
-    imageUrl: 'C:/Users/ahmet/flutterApp/cafe_menu/lib/customer/constants/images/images.jpg',
+    imageUrl: 'C:/Users/ahmet/flutterApp/cafe_menu/lib/customer/constants/images/soguk_kahve.jpg',
   ),
   CategoryModel(
     id: '4',
     name: 'Sıcak Kahveler',
-    imageUrl: 'C:/Users/ahmet/flutterApp/cafe_menu/lib/customer/constants/images/images.jpg',
+    imageUrl: 'C:/Users/ahmet/flutterApp/cafe_menu/lib/customer/constants/images/sicak_kahve.jpg',
   ),
   CategoryModel(
     id: '5',
     name: 'Soğuk İçecekler',
-    imageUrl: 'C:/Users/ahmet/flutterApp/cafe_menu/lib/customer/constants/images/images.jpg',
+    imageUrl: 'C:/Users/ahmet/flutterApp/cafe_menu/lib/customer/constants/images/soguk-icecekler.jpg',
   ),
   CategoryModel(
     id: '6',
     name: 'Milkshake',
-    imageUrl: 'C:/Users/ahmet/flutterApp/cafe_menu/lib/customer/constants/images/images.jpg',
+    imageUrl: 'C:/Users/ahmet/flutterApp/cafe_menu/lib/customer/constants/images/milkshake.jpg',
   ),
   CategoryModel(
     id: '7',
     name: 'Frozen',
-    imageUrl: 'C:/Users/ahmet/flutterApp/cafe_menu/lib/customer/constants/images/images.jpg',
+    imageUrl: 'C:/Users/ahmet/flutterApp/cafe_menu/lib/customer/constants/images/frozen.jpg',
   ),
   CategoryModel(
     id: '8',
     name: 'Extralar',
-    imageUrl: 'C:/Users/ahmet/flutterApp/cafe_menu/lib/customer/constants/images/images.jpg',
+    imageUrl: 'C:/Users/ahmet/flutterApp/cafe_menu/lib/customer/constants/images/extra.jpg',
   ),
 ];
